@@ -1,7 +1,7 @@
 pipeline {
     agent { label 'admin' }
     tools {
-        jdk 'Java17'
+        jdk 'java'
         maven 'Maven3'
     }
   /*  environment {
