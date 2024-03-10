@@ -1,5 +1,5 @@
 pipeline {
-    agent { label 'Jenkins-Agent' }
+    agent { label 'admin' }
     tools {
         jdk 'Java17'
         maven 'Maven3'
@@ -22,7 +22,7 @@ pipeline {
 
         stage("Checkout from SCM"){
                 steps {
-                    git branch: 'main', credentialsId: 'github', url: 'https://github.com/Ashfaque-9x/register-app'
+                    git branch: 'main', credentialsId: 'Git_Hub', url: 'https://github.com/Shivanaini/register-app.git'
                 }
         }
 
@@ -39,7 +39,7 @@ pipeline {
            }
        }
 
-       stage("SonarQube Analysis"){
+      /* stage("SonarQube Analysis"){
            steps {
 	           script {
 		        withSonarQubeEnv(credentialsId: 'jenkins-sonarqube-token') { 
@@ -111,5 +111,5 @@ pipeline {
                      subject: "${env.JOB_NAME} - Build # ${env.BUILD_NUMBER} - Successful", 
                      mimeType: 'text/html',to: "ashfaque.s510@gmail.com"
       }      
-   }
+   }*/
 }
