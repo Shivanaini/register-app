@@ -1,5 +1,5 @@
 pipeline {
-    agent { label 'admin' }
+    agent { label 'agent node ' }
     tools {
         jdk 'java'
         maven 'Maven3'
